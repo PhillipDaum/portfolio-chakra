@@ -17,6 +17,7 @@ Inspiration:
 - https://www.figma.com/design/QoWn4XHxyN9dLSWc7fRIjv/Developer-Portfolio-Design-(Community)?node-id=0-1&p=f&t=Zpcnv81DNWQnfKVB-0
 - https://benscott.dev/#about
 - https://www.skersys.eu/
+- https://www.lizsheremet.dev/
 
 
 
