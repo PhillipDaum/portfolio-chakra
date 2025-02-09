@@ -7,10 +7,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 // A sticky Chakra Navbar that is a hamburger menu and scrolls from one item to another
 // maybe change the base to smaller? - or just the breakpoint where it goes to the hamburger
-// There are some little issues 
-  // the menu appears to be a slightly different hue than the navbar and it overlaps it by a several pixels
-  // also the blog on hover is outlined, which is maybe ok cuz its a page while the others are on the same page
-  // but more importantly on hover the bg of the light/dark mode is out of bounds
+// the menu appears to be a slightly different hue than the navbar and it overlaps it by a several pixels
 
 function NavBar() {
   const navigate = useNavigate();
@@ -37,15 +34,27 @@ function NavBar() {
   };
 
   return (
-    <Box bg="bg.muted" position="sticky" top={0} zIndex={10} display="flex" justifyContent="space-between" p="3">
-
+    <Box
+      bg="bg.muted"
+      position="fixed"
+      width="100%"
+      top={0}
+      zIndex={10}
+      display="flex"
+      justifyContent="space-between"
+      p="3"
+    >
       <Heading as="h2">Phil Daum</Heading>
 
       {/* Mobile */}
       <MenuRoot>
         <MenuTrigger asChild>
-          <Button  variant="outline" size="sm" display={{ base: "block", md: "none" }}>
-            { open ? <FaBars /> :  <FaTimes /> }
+          <Button
+            variant="outline"
+            size="sm"
+            display={{ base: "block", md: "none" }}
+          >
+            <FaBars />
           </Button>
 
           {/* <Button >
@@ -53,39 +62,45 @@ function NavBar() {
           </Button> */}
         </MenuTrigger>
         <MenuContent>
-          <MenuItem value="new-txt">
+          <MenuItem value="intro">
             <Link onClick={() => handleNavClick("intro")} fontWeight="bold">
               Intro
             </Link>
           </MenuItem>
-          <MenuItem value="new-file">
+          <MenuItem value="skills">
             <Link onClick={() => handleNavClick("skills")} fontWeight="bold">
               Skills
             </Link>
           </MenuItem>
-          <MenuItem value="new-win">
+          <MenuItem value="projects">
             <Link onClick={() => handleNavClick("projects")} fontWeight="bold">
               Projects
             </Link>
           </MenuItem>
-          <MenuItem value="open-file">
+          <MenuItem value="about">
             <Link onClick={() => handleNavClick("about")} fontWeight="bold">
               About
             </Link>
           </MenuItem>
-          <MenuItem value="export">
+          <MenuItem value="blog">
             <Link as={RouterLink} to="/blog" fontWeight="bold">
               Blog
             </Link>
           </MenuItem>
-          <MenuItem value="export">
+          <MenuItem value="toggleColorMode">
             <ColorModeButton />
           </MenuItem>
         </MenuContent>
       </MenuRoot>
 
       {/* Desktop */}
-      <Flex as="nav"  justifyContent="space-around" gap="3" alignItems="center" display={{ base: "none", md: "flex" }}>
+      <Flex
+        as="nav"
+        justifyContent="space-around"
+        gap="3"
+        alignItems="center"
+        display={{ base: "none", md: "flex" }}
+      >
         <Link onClick={() => handleNavClick("intro")} fontWeight="bold">
           Intro
         </Link>
@@ -103,7 +118,6 @@ function NavBar() {
         </Link>
         <ColorModeButton />
       </Flex>
-
     </Box>
   );
 }
