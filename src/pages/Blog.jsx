@@ -1,5 +1,10 @@
-import React from 'react';
 import { Container, Heading, Text, Box } from '@chakra-ui/react';
+
+// import the markdown thing. 
+// at first this just has one blog post,
+// then a short list at the top that will render a few
+// later maybe cards in a list and a link to a new page
+
 
 const Blog = () => {
   return (

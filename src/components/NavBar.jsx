@@ -5,6 +5,9 @@ import { Link as RouterLink } from "react-router-dom"; // why is this different?
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+// FaTimes doesn't render, do I care?
+// Add linkedin and Github prolly (maybe)
+
 // A sticky Chakra Navbar that is a hamburger menu and scrolls from one item to another
 // maybe change the base to smaller? - or just the breakpoint where it goes to the hamburger
 // the menu appears to be a slightly different hue than the navbar and it overlaps it by a several pixels
