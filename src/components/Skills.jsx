@@ -1,34 +1,48 @@
-import { Box, Tabs, SimpleGrid } from "@chakra-ui/react";
-import { DiHtml5, DiReact, DiJavascript1, DiNodejsSmall } from "react-icons/di";
+import { Box, Tabs, Grid, GridItem, Flex, Heading } from "@chakra-ui/react";
+import skills from "../data/skills.js";
+import SkillCard from "./SkillCard";
 
+
+// maybe just list in one thing
 function Skills() {
   return (
     <Box>
       <Tabs.Root defaultValue="use-often">
         <Tabs.List>
-          <Tabs.Trigger value="use-often">
-            {/* icons in these? */}
-            Use a lot
-          </Tabs.Trigger>
+          <Tabs.Trigger value="use-often">Use Often</Tabs.Trigger>
           <Tabs.Trigger value="use-sometimes">Use sometimes</Tabs.Trigger>
-          <Tabs.Trigger value="exposed-to">Exposed to</Tabs.Trigger>
         </Tabs.List>
         <Tabs.Content value="use-often">
-          <SimpleGrid>
-            {/* icons in here */}
-          </SimpleGrid>
+          <Flex
+            padding="1rem 2.5rem"
+            gap="1rem"
+            wrap="wrap"
+            justifyContent="center"
+          >
+            {skills.crispy.map((item, index) => (
+              // edgecase, github can't see it
+              <SkillCard icon={item.image} title={item.title} key={index} />
+            ))}
+          </Flex>
         </Tabs.Content>
         <Tabs.Content value="use-sometimes">
-          <SimpleGrid>
-            {/* icons in here */}
-          </SimpleGrid>
-        </Tabs.Content>
-        <Tabs.Content value="exposed-to">
-          <SimpleGrid>
-            {/* icons in here */}
-          </SimpleGrid>
+          <Flex
+            padding="1rem 2.5rem"
+            gap="1rem"
+            wrap="wrap"
+            justifyContent="center"
+          >
+            {skills.lessCrispy.map((item, index) => (
+              // edgecase, github can't see it
+              <SkillCard icon={item.image} title={item.title} key={index} />
+            ))}
+          </Flex>
         </Tabs.Content>
       </Tabs.Root>
+      {/* better border */}
+      <Box border="teal solid">
+        <Heading as="h2" textAlign="center">Continuously Learning</Heading>
+      </Box>
     </Box>
   );
 }

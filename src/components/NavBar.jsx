@@ -41,11 +41,13 @@ function NavBar() {
       bg="bg.muted"
       position="fixed"
       width="100%"
-      top={0}
-      zIndex={10}
+      // zIndex={10}
       display="flex"
+      height="3rem"
       justifyContent="space-between"
-      p="3"
+      paddingLeft="3"
+      paddingRight="3"
+      paddingTop="2"
     >
       <Heading as="h2">Phil Daum</Heading>
 
