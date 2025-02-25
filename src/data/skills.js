@@ -1,5 +1,4 @@
-const skills = {
-  crispy: [
+const skills = [
     {
       title: "JavaScript",
       image: "src/assets/javascript.svg",
@@ -46,23 +45,20 @@ const skills = {
       alt: "VS Code logo"
     },
     {
-      title: "NixOS",
+      title: "Nix",
       image: "src/assets/nix.svg",
       alt: "NIX logo"
     },
     {
       title: "RESTful APIs",
-      image: "", ///ADD one
+      image: "src/assets/rest.svg",
       alt: "RESTful APIs logo"
     },
     {
       title: "Chakra UI",
-      image: "src/assets/chakra.svg", ///ADD one
+      image: "src/assets/chakra.svg",
       alt: "Chakra UI logo"
-    }
-    // chakra UI
-  ],
-  lessCrispy: [
+    },
     {
       title: "Python",
       image: "src/assets/python.svg",
@@ -81,14 +77,26 @@ const skills = {
     {
       title: "WordPress",
       image: "src/assets/wordpress.svg",
+      color: "00749C",
       alt: "WordPress logo"
+    },
+    {
+      title: "Bootstrap",
+      image: "src/assets/bootstrap.svg",
+      alt: "Bootstrap logo"
     },
     {
       title: "Jira",
       image: "src/assets/jira.svg",
       alt: "Jira logo"
+    },
+    {
+      title: "Vim",
+      image: "src/assets/vim.svg",
+      alt: "Vim logo"
     }
-  ],
-};
+    // adobe, sass, apache, inkscape?, 
+  ]
+
 
 export default skills;
