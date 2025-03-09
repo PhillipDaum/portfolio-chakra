@@ -1,20 +1,16 @@
+import { useState } from "react";
 import { Flex, Link, Box, Heading, Button } from "@chakra-ui/react";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 import { ColorModeButton } from "./ui/color-mode";
 import { Link as RouterLink } from "react-router-dom"; // why is this different?
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-
-// FaTimes doesn't render, do I care?
-// Add linkedin and Github prolly (maybe)
-
-// A sticky Chakra Navbar that is a hamburger menu and scrolls from one item to another
-// maybe change the base to smaller? - or just the breakpoint where it goes to the hamburger
-// the menu appears to be a slightly different hue than the navbar and it overlaps it by a several pixels
+import { SiLinkedin, SiGithub } from "react-icons/si";
 
 function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -38,10 +34,10 @@ function NavBar() {
 
   return (
     <Box
-      bg="bg.muted"
+      bg="bg"
       position="fixed"
       width="100%"
-      // zIndex={10}
+      zIndex={10}
       display="flex"
       height="3rem"
       justifyContent="space-between"
@@ -49,24 +45,40 @@ function NavBar() {
       paddingRight="3"
       paddingTop="2"
     >
-      <Heading as="h2">Phil Daum</Heading>
+      <Flex gap=".3rem" alignItems="center">
+        <Link paddingRight=".5rem" onClick={() => handleNavClick("intro")}>
+          <Heading as="h2">Phil Daum</Heading>
+        </Link>
+        <Link
+          href="https://github.com/PhillipDaum"
+          target="_blank"
+          _hover={{ color: "fg.muted" }}
+        >
+          <SiGithub size="1.5rem" />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/daumphil/"
+          target="_blank"
+          _hover={{ color: "fg.muted" }}
+        >
+          <SiLinkedin size="1.5rem" />
+        </Link>
+      </Flex>
 
       {/* Mobile */}
-      <MenuRoot>
+      <MenuRoot
+        onOpenChange={() => setMenuOpen(!menuOpen)} // Track menu state
+      >
         <MenuTrigger asChild>
           <Button
             variant="outline"
             size="sm"
             display={{ base: "block", md: "none" }}
           >
-            <FaBars />
+            {menuOpen ? <FaTimes /> : <FaBars />}
           </Button>
-
-          {/* <Button >
-            Open
-          </Button> */}
         </MenuTrigger>
-        <MenuContent>
+        <MenuContent background="bg">
           <MenuItem value="intro">
             <Link onClick={() => handleNavClick("intro")} fontWeight="bold">
               Intro

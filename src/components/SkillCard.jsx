@@ -1,7 +1,6 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import { SiWordpress, SiGithub } from "react-icons/si";
 
-// look at sizes for stuff
 function SkillCard({ item }) {
   // workaround for dark colored images
   const icons = {
@@ -10,8 +9,18 @@ function SkillCard({ item }) {
   };
 
   return (
-    <Box>
-      <Flex flexDirection="column" textAlign="center">
+    <Box
+    // animation removed until each icon is in a fixed size box
+    // _hover={{
+    //   boxShadow: "sm",
+    //   transform: "scale(1.01)",
+    //   transition: "0.2s ease-in-out",
+    //   background: "bg",
+    //   padding:"1",
+    //   rounded:"md"
+    // }}
+    >
+      <Flex flexDirection="column" textAlign="center" alignItems="center">
         {icons[item.title.toLowerCase()] ? (
           icons[item.title.toLowerCase()]  // Correctly render the icon component
         ) : (

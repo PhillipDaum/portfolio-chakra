@@ -1,12 +1,11 @@
-import { Box, Tabs, Grid, GridItem, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import skills from "../data/skills.js";
 import SkillCard from "./SkillCard";
 
-// maybe just list in one thing
 function Skills() {
   return (
     <Box>
-      <Box border="teal solid">
+      <Box borderTop="solid" borderBottom="solid" borderColor="border.info">
         <Heading as="h2" textAlign="center">
           Skills
         </Heading>
@@ -18,13 +17,18 @@ function Skills() {
         justifyContent="center"
       >
         {skills.map((item, index) => (
-          // edgecase, github can't see it
           <SkillCard item={item} key={index} />
         ))}
       </Flex>
-      {/* better border */}
-      <Box border="teal solid">
-        <Heading as="h2" textAlign="center">
+      <Box>
+        {/* Switch to underline */}
+        <Heading 
+            _hover={{
+              transform: "scale(1.05)",
+              color:"fg.info",
+              transition: "0.2s ease-in-out",
+            }}
+        as="h2" textAlign="center">
           Continuously Learning
         </Heading>
       </Box>

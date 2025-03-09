@@ -1,10 +1,10 @@
 const typeEffectText = [
-    { verbPhrase: "Juggling JSON like a jester", techPhrase: "using JavaScript." },
-    { verbPhrase: "rendering reusable realities", techPhrase: "with React." },
-    { verbPhrase: "navigating networks nimbly", techPhrase: "with Node." },
-    { verbPhrase: "finessing forms fearlessly", techPhrase: "with flexbox." },
-    { verbPhrase: "structuring solid schemas", techPhrase: "in SQL." },
-    // { verbPhrase: "collaborate and commit", techPhrase: "using Git." },
-    { verbPhrase: "designing dynamic creations", techPhrase: "with DOM manipulation." },
+    { verbPhrase: "juggles JSON like a jester with", techPhrase: "JavaScript" },
+    { verbPhrase: "renders reusable realities with", techPhrase: "React" },
+    { verbPhrase: "navigates networks nimbly with", techPhrase: "Node" },
+    { verbPhrase: "finesses forms fearlessly with", techPhrase: "Flexbox" },
+    { verbPhrase: "structures solid schemas with", techPhrase: "SQL" },
+    { verbPhrase: "collaborates and commits using", techPhrase: "Git" },
+    { verbPhrase: "designs dynamic creations through", techPhrase: "DOM manipulation" },
   ];
 export default typeEffectText;

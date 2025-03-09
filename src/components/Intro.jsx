@@ -1,51 +1,36 @@
 import { useEffect, useRef } from "react";
-import {
-  Box,
-  Flex,
-  Heading,
-  Stack,
-  Grid,
-  GridItem,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Button } from "@chakra-ui/react";
 import Typed from "typed.js";
 import typeEffectText from "../data/typeEffectText";
 import { SlArrowDown } from "react-icons/sl";
 
 function Intro() {
-  const verbRef = useRef(null);
-  const techRef = useRef(null);
-  let typedVerb, typedTech;
+  const typedTextRef = useRef(null);
+  let typedText;
 
+  {
+    /* Version 2 can have the color*/
+  }
   const typeAnimation = (index) => {
     if (index >= typeEffectText.length) index = 0;
-    typedVerb = new Typed(verbRef.current, {
-      strings: [typeEffectText[index].verbPhrase],
-      typeSpeed: 30,
+    typedText = new Typed(typedTextRef.current, {
+      strings: [
+        `${typeEffectText[index].verbPhrase} ${typeEffectText[index].techPhrase}.`,
+      ],
+      typeSpeed: 40,
       showCursor: false,
       onComplete: () => {
-        typedTech = new Typed(techRef.current, {
-          strings: [typeEffectText[index].techPhrase],
-          typeSpeed: 40,
-          showCursor: false,
-          onComplete: () => {
-            setTimeout(() => {
-              typedVerb.destroy();
-              typedTech.destroy();
-              index++;
-              typeAnimation(index);
-            }, 1000);
-          },
-        });
+        setTimeout(() => {
+          typedText.destroy();
+          index++;
+          typeAnimation(index);
+        }, 2000);
       },
     });
   };
   // ask teachers about this implementation
   useEffect(() => typeAnimation(0), []);
 
-  // probably switch to a grid for more control
-  // longest sentence set - downsides to this
-  // flex-basis 100%, add margins on sides, won't jam in sides. 
   return (
     <Box>
       <Flex
@@ -53,58 +38,45 @@ function Intro() {
         justifyContent="center"
         alignItems="center"
         gap="1rem"
-        direction={{ base: "column", md: "row" }}
+        direction="column"
       >
-        <Grid templateColumns={{ base: "1fr", md: "2fr 5fr" }} gap="2rem">
-          <GridItem>
-            <Stack>
-              {/* maybe make this one h1 that is split */}
-              <Heading
-                as="h1"
-                lineHeight="1.18"
-                fontSize={{ base: "2xl", md: "3xl" }}
-              >
-                {/* I'm{" "} */}
-                <Box as="span" color="fg.info">
-                  Phil
-                </Box>
-                , <br /> the developer.
-              </Heading>
-            </Stack>
-          </GridItem>
+        <Heading
+          as="h1"
+          lineHeight="1.18"
+          fontSize={{ base: "2xl", md: "3xl" }}
+        >
+          <Box as="span" color="fg.info">
+            Phil
+          </Box>
+          , the developer,
+        </Heading>
 
-          <GridItem>
-            <Stack>
-              <Heading
-                as="h2"
-                fontSize={{ base: "2xl", md: "3xl" }}
-                ref={verbRef}
-              >
-                {"  "}
-              </Heading>
-              <Heading
-                as="h2"
-                fontSize={{ base: "2xl", md: "3xl" }}
-                ref={techRef}
-              >
-                {" "}
-              </Heading>
-            </Stack>
-          </GridItem>
+        {/* now this one deletes after each! how did I fix that before? */}
+        <Heading
+          textAlign="center"
+          as="h2"
+          fontSize={{ base: "2xl", md: "3xl" }}
+          ref={typedTextRef}
+          minHeight="2rem"
+        >
+          {"  "}
+          {/* for version 2 add span with color set here */}
+        </Heading>
 
-          <GridItem colSpan={{ base: "1", md: "2" }}>
-            <Flex justifyContent="center">
-              <Button variant="outline" colorPalette="teal">
-                <Flex direction="column" alignItems="center">
-                  <Heading as="h3">More</Heading>
-                  <SlArrowDown />
-                </Flex>
-              </Button>
-            </Flex>
-          </GridItem>
-        </Grid>
+        {/* maybe work on padding */}
+        {/* add hover state */}
+        <Button
+          variant="outline"
+          borderColor="border.info"
+          background="bg.muted"
+          _hover={{backgroundColor:"bg"}}
+        >
+          <Flex direction="column" alignItems="center">
+            <Text fontSize="xl">Learn More</Text>
+            <SlArrowDown />
+          </Flex>
+        </Button>
       </Flex>
-      {/* button here to More about phil */}
     </Box>
   );
 }

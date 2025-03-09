@@ -1,3 +1,4 @@
+// not currently in use
 const projects = [
     {
       id: 1,
