@@ -1,4 +1,0 @@
-- add 2 more projects
-- add LinkedIn/Gihub 2x more at top
-- Change 'continuously learning' animation to underline, no grow
-- Add to about 

@@ -11,7 +11,7 @@ function Skills() {
         </Heading>
       </Box>
       <Flex
-        padding="1rem 2.5rem"
+        padding="1rem 2.5rem 1.5rem"
         gap="1rem"
         wrap="wrap"
         justifyContent="center"

@@ -7,6 +7,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 
+
+// Blog link commented out in both
 function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -99,11 +101,11 @@ function NavBar() {
               About
             </Link>
           </MenuItem>
-          <MenuItem value="blog">
+          {/* <MenuItem value="blog">
             <Link as={RouterLink} to="/blog" fontWeight="bold">
               Blog
             </Link>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem value="toggleColorMode">
             <ColorModeButton />
           </MenuItem>
@@ -130,9 +132,9 @@ function NavBar() {
         <Link onClick={() => handleNavClick("about")} fontWeight="bold">
           About
         </Link>
-        <Link as={RouterLink} to="/blog" fontWeight="bold">
+        {/* <Link as={RouterLink} to="/blog" fontWeight="bold">
           Blog
-        </Link>
+        </Link> */}
         <ColorModeButton />
       </Flex>
     </Box>

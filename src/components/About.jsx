@@ -11,7 +11,7 @@ import {
 function About() {
   return (
     <Box key="about" scrollSnapAlign="start">
-      <Box borderTop="solid" borderBottom="solid" borderColor="border.info">
+      <Box borderTop="solid" borderBottom="solid" borderColor="border.info" marginBottom="4rem">
         <Heading as="h2" textAlign="center">
           About Phil
         </Heading>
