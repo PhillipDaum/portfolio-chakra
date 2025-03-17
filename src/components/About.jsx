@@ -19,7 +19,7 @@ function About() {
       <Grid templateColumns="repeat(7, 1fr)" gap="1rem" padding="1rem">
         <GridItem colSpan={{ sm: "7", md: "3" }} rowSpan="1">
           <Flex direction="column" background="bg" padding={{base:"3rem", md:"1rem", lg:"3rem"}} rounded="md">
-            <Image src="src/assets/headshot.png" borderRadius="50%" />
+            <Image src="./src/assets/headshot.png" borderRadius="50%" />
           </Flex>
         </GridItem>
 
