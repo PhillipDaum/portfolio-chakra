@@ -1,12 +1,16 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
-import { SiWordpress, SiGithub } from "react-icons/si";
+import { SiWordpress, SiGithub, SiExpress } from "react-icons/si";
 
 function SkillCard({ item }) {
   // workaround for dark colored images
   const icons = {
     wordpress: <SiWordpress size="5rem" />,  // Add size prop for better display
     github: <SiGithub size="5rem" />,
+    expressjs: <SiExpress size="5rem" />,
   };
+
+  let string = "I am a human."
+  console.log(string)
 
   return (
     <Box
@@ -21,8 +25,8 @@ function SkillCard({ item }) {
     // }}
     >
       <Flex flexDirection="column" textAlign="center" alignItems="center">
-        {icons[item.title.toLowerCase()] ? (
-          icons[item.title.toLowerCase()]  // Correctly render the icon component
+        {icons[item.title.toLowerCase().replace(/\s/g, "")] ? (
+          icons[item.title.toLowerCase().replace(/\s/g, "")]  // Correctly render the icon component
         ) : (
           <Image height="5rem" objectFit="contain" src={item.image} />
         )}

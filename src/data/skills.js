@@ -1,98 +1,103 @@
 const skills = [
     {
       title: "JavaScript",
-      image: "src/assets/javascript.svg",
+      image: "./img/javascript.svg",
       alt: "JavaScript logo"
     },
     {
       title: "React",
-      image: "src/assets/react.svg",
+      image: "./img/react.svg",
       alt: "React logo"
     },
     {
       title: "HTML5",
-      image: "src/assets/html.svg",
+      image: "./img/html.svg",
       alt: "HTML5 logo"
     },
     {
       title: "CSS3",
-      image: "src/assets/css.svg",
+      image: "./img/css.svg",
       alt: "CSS3 logo"
     },
     {
       title: "PostgreSQL",
-      image: "src/assets/postgresql.svg",
+      image: "./img/postgresql.svg",
       alt: "JavaScript logo"
     },
     {
       title: "Vite",
-      image: "src/assets/vite.svg",
+      image: "./img/vite.svg",
       alt: "Vite logo"
     },
     {
       title: "Git",
-      image: "src/assets/git.svg",
+      image: "./img/git.svg",
       alt: "Git logo"
     },
     {
       title: "GitHub",
-      image: "src/assets/github.svg",
+      image: "",
       alt: "GitHub logo"
     }, 
     {
+      title: "Express JS",
+      image: "",
+      alt: "Express JS logo"
+    }, 
+    {
       title: "VS Code",
-      image: "src/assets/vscode.svg",
+      image: "./img/vscode.svg",
       alt: "VS Code logo"
     },
     {
       title: "Nix",
-      image: "src/assets/nix.svg",
+      image: "./img/nix.svg",
       alt: "NIX logo"
     },
     {
       title: "RESTful APIs",
-      image: "src/assets/rest.svg",
+      image: "./img/rest.svg",
       alt: "RESTful APIs logo"
     },
     {
       title: "Chakra UI",
-      image: "src/assets/chakra.svg",
+      image: "./img/chakra.svg",
       alt: "Chakra UI logo"
     },
     {
       title: "Python",
-      image: "src/assets/python.svg",
+      image: "./img/python.svg",
       alt: "Python logo"
     },
     {
       title: "Firebase SDK",
-      image: "src/assets/firebase.svg",
+      image: "./img/firebase.svg",
       alt: "Firebase logo"
     },
     {
       title: "Ubuntu",
-      image: "src/assets/ubuntu.svg",
+      image: "./img/ubuntu.svg",
       alt: "Ubuntu logo"
     },
     {
       title: "WordPress",
-      image: "src/assets/wordpress.svg",
+      image: "",
       color: "00749C",
       alt: "WordPress logo"
     },
     {
       title: "Bootstrap",
-      image: "src/assets/bootstrap.svg",
+      image: "./img/bootstrap.svg",
       alt: "Bootstrap logo"
     },
     {
       title: "Jira",
-      image: "src/assets/jira.svg",
+      image: "./img/jira.svg",
       alt: "Jira logo"
     },
     {
       title: "Vim",
-      image: "src/assets/vim.svg",
+      image: "./img/vim.svg",
       alt: "Vim logo"
     }
     // adobe, sass, apache, inkscape?, 

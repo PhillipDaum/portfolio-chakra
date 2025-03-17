@@ -30,7 +30,7 @@ function Projects() {
           <GridItem colSpan={{ base: "5", md: "3" }}>
             <Flex direction="col" alignItems="center" height="100%">
               <Image
-                src="src/assets/img/world-countries.png"
+                src="./img/world-countries.png"
                 rounded="md"
                 objectPosition="left"
                 width="100%"
@@ -217,8 +217,8 @@ function Projects() {
               <Image
                 src={
                   isHovered
-                    ? "src/assets/img/focus-fox.png"
-                    : "src/assets/img/gdi.png"
+                    ? "./img/focus-fox.png"
+                    : "./img/gdi.png"
                 }
                 alt={
                   isHovered
@@ -248,7 +248,7 @@ function Projects() {
           <GridItem colSpan={{ base: "5", md: "3" }}>
             <Flex direction="col" alignItems="center" height="100%">
               <Image
-                src="src/assets/img/bento-box.png"
+                src="./img/bento-box.png"
                 rounded="md"
                 objectPosition="left"
                 width="100%"
