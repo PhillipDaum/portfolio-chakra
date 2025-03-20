@@ -10,6 +10,11 @@ const skills = [
       alt: "React logo"
     },
     {
+      title: "Node.js",
+      image: "./img/nodejs.svg",
+      alt: "Node.js logo"
+    },
+    {
       title: "HTML5",
       image: "./img/html.svg",
       alt: "HTML5 logo"
