@@ -99,6 +99,11 @@ const skills = [
       title: "Vim",
       image: "./img/vim.svg",
       alt: "Vim logo"
+    },
+    {
+      title: "Postman",
+      image: "./img/postman.svg",
+      alt: "Postman logo"
     }
     // adobe, sass, apache, inkscape?, 
   ]
