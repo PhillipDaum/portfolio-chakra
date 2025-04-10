@@ -3,6 +3,7 @@ import { Box, Flex, Heading, Text, Button } from "@chakra-ui/react";
 import Typed from "typed.js";
 import typeEffectText from "../data/typeEffectText";
 import { SlArrowDown } from "react-icons/sl";
+import ScrollTo from "./ScrollTo";
 
 function Intro() {
   const typedTextRef = useRef(null);
@@ -69,12 +70,14 @@ function Intro() {
           variant="outline"
           borderColor="border.info"
           background="bg.muted"
-          _hover={{backgroundColor:"bg"}}
+          _hover={{ backgroundColor: "bg" }}
         >
-          <Flex direction="column" alignItems="center">
-            <Text fontSize="xl">Learn More</Text>
-            <SlArrowDown />
-          </Flex>
+          <ScrollTo area="skills">
+            <Flex direction="column" alignItems="center">
+              <Text fontSize="xl">Learn More</Text>
+              <SlArrowDown />
+            </Flex>
+          </ScrollTo>
         </Button>
       </Flex>
     </Box>

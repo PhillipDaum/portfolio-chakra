@@ -9,9 +9,6 @@ function SkillCard({ item }) {
     expressjs: <SiExpress size="5rem" />,
   };
 
-  let string = "I am a human."
-  console.log(string)
-
   return (
     <Box
     // animation removed until each icon is in a fixed size box

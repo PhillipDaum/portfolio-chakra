@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 function App() {
   return (

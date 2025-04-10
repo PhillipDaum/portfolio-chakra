@@ -2,37 +2,13 @@ import { useState } from "react";
 import { Flex, Link, Box, Heading, Button } from "@chakra-ui/react";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
 import { ColorModeButton } from "./ui/color-mode";
-import { Link as RouterLink } from "react-router-dom"; // why is this different?
-import { useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { SiLinkedin, SiGithub } from "react-icons/si";
-
+import ScrollTo from "./ScrollTo";
 
 // Blog link commented out in both
 function NavBar() {
-  const navigate = useNavigate();
-  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  // Handles navigation and scrolling
-  const handleNavClick = (id) => {
-    if (location.pathname === "/") {
-      // If already on homepage, just scroll
-      scrollToSection(id);
-    } else {
-      // Navigate home first, then scroll after load
-      navigate("/");
-      // look into this delay
-      setTimeout(() => scrollToSection(id), 100); // Delay ensures page is loaded
-    }
-  };
 
   return (
     <Box
@@ -48,9 +24,9 @@ function NavBar() {
       paddingTop="2"
     >
       <Flex gap=".3rem" alignItems="center">
-        <Link paddingRight=".5rem" onClick={() => handleNavClick("intro")}>
+        <ScrollTo paddingRight=".5rem" area="intro">
           <Heading as="h2">Phil Daum</Heading>
-        </Link>
+        </ScrollTo>
         <Link
           href="https://github.com/PhillipDaum"
           target="_blank"
@@ -82,24 +58,24 @@ function NavBar() {
         </MenuTrigger>
         <MenuContent background="bg">
           <MenuItem value="intro">
-            <Link onClick={() => handleNavClick("intro")} fontWeight="bold">
+            <ScrollTo area="intro" fontWeight="bold">
               Intro
-            </Link>
+            </ScrollTo>
           </MenuItem>
           <MenuItem value="skills">
-            <Link onClick={() => handleNavClick("skills")} fontWeight="bold">
+            <ScrollTo area="skills" fontWeight="bold">
               Skills
-            </Link>
+            </ScrollTo>
           </MenuItem>
           <MenuItem value="projects">
-            <Link onClick={() => handleNavClick("projects")} fontWeight="bold">
+            <ScrollTo area="projects" fontWeight="bold">
               Projects
-            </Link>
+            </ScrollTo>
           </MenuItem>
           <MenuItem value="about">
-            <Link onClick={() => handleNavClick("about")} fontWeight="bold">
+            <ScrollTo area="about" fontWeight="bold">
               About
-            </Link>
+            </ScrollTo>
           </MenuItem>
           {/* <MenuItem value="blog">
             <Link as={RouterLink} to="/blog" fontWeight="bold">
@@ -120,18 +96,18 @@ function NavBar() {
         alignItems="center"
         display={{ base: "none", md: "flex" }}
       >
-        <Link onClick={() => handleNavClick("intro")} fontWeight="bold">
+        <ScrollTo area="intro" fontWeight="bold">
           Intro
-        </Link>
-        <Link onClick={() => handleNavClick("skills")} fontWeight="bold">
+        </ScrollTo>
+        <ScrollTo area="skills" fontWeight="bold">
           Skills
-        </Link>
-        <Link onClick={() => handleNavClick("projects")} fontWeight="bold">
+        </ScrollTo>
+        <ScrollTo area="projects" fontWeight="bold">
           Projects
-        </Link>
-        <Link onClick={() => handleNavClick("about")} fontWeight="bold">
+        </ScrollTo>
+        <ScrollTo area="about" fontWeight="bold">
           About
-        </Link>
+        </ScrollTo>
         {/* <Link as={RouterLink} to="/blog" fontWeight="bold">
           Blog
         </Link> */}
